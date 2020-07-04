@@ -11,6 +11,9 @@ const server = http.createServer((req, res) => {
         res.write(JSON.stringify([1, 2, 3]));
         res.end();
     }
+    
+    if (!server) res.status(404).send("object not found");
+    res.end();
 });
 
 server.listen(3000); 
